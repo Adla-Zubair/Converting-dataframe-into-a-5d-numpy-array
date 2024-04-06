@@ -16,3 +16,5 @@ subject classification, followed by 5 sleep stages, followed by the channels, ea
 and then the features.
 This gives a 5d array of dimension (2,5,21,21,20).
 
+References : https://www.fieldtriptoolbox.org/getting_started/limo/
+
