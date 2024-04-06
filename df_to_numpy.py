@@ -33,11 +33,11 @@ import matplotlib.pyplot as plt
 
 #%% Loading the dataset
 
-result = pd.read_csv(r'/serverdata/ccshome/adla/NAS/DreamRecallEEG/testing_sleep_data/data/all_eegfeatures_fooofdata_02.csv')
+result = pd.read_csv(r'features_compilation.csv')
 
-typelist = pd.read_csv(r'/serverdata/ccshome/adla/NAS/DreamRecallEEG/testing_sleep_data/data/MEDCNTLIST.csv')
+typelist = pd.read_csv(r'metadata.csv')
 
-## Adding the CNT/MED labels to the dataset
+
 
 #Removing unwnated columns
 df = result.drop(['epochno', 'Unnamed: 0'], axis = 1)
@@ -92,7 +92,7 @@ avg_chan['Group'] = avg_chan['subjname'].map(typelist.set_index('subjname')['MED
 # Saving the dataset
 avg_chan.to_csv(r"/serverdata/ccshome/adla/NAS/DreamRecallEEG/testing_sleep_data/data/avg_chan_for_array.csv")
 
-#%%put into loop for just perm entropy !!!!!!!!!!!!!!!!
+#%% Trial : put into loop for just perm entropy !!!!!!!!!!!!!!!!
 
 
 ##   Here we are making 3d array for each electrode of a particular stage for a particular group. This is then done for all stages, giving us a 4d array.
